@@ -7579,6 +7579,27 @@ video {
   z-index: auto;
 }
 
+.pxx-30{
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.pbx-90{
+  padding-bottom: 90px;
+ }
+
+ .hx-156{
+   min-height: 156px;
+ }
+
+ .wx-36{
+   margin-bottom: 36px;
+ }
+ .actnBtn {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
 @media (min-width: 640px) {
   .sm\:appearance-none {
     -webkit-appearance: none;

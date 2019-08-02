@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 
 import { loadList } from "../../store/actions/homepageActions";
 import ItemCard from "../../components/item/ItemCard";
+import Navbar from "../../components/navbar/NavBar";
 
 class HomePage extends Component {
   componentDidMount() {
@@ -13,11 +14,16 @@ class HomePage extends Component {
     console.log(this.props.list.data);
 
     return (
-      <div className="bg-black container flex flex-wrap content-start px-4">
-        {this.props.list.data &&
-          this.props.list.data.map((item, index) => (
-            <ItemCard data={item} key={index.toString()} />
-          ))}
+      <div className="bg-black container ">
+        <div className=" ">
+          <Navbar />
+        </div>
+        <div className="flex flex-wrap content-start">
+          {this.props.list.data &&
+            this.props.list.data.map((item, index) => (
+              <ItemCard data={item} key={index.toString()} />
+            ))}
+        </div>
       </div>
     );
   }

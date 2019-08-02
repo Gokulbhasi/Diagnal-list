@@ -1,11 +1,13 @@
 {
   "name": "diagnal",
   "version": "0.1.0",
+  "homepage": "http://Gokulbhasi.github.io/Diagnal-list",
   "private": true,
   "dependencies": {
     "axios": "^0.19.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-lazy-load": "^3.0.13",
     "react-redux": "^6.0.0",
     "react-router-dom": "^4.3.1",
     "react-scripts": "3.0.1",
@@ -15,8 +17,10 @@
   "scripts": {
     "build:css": "tailwind build ./src/tailwind.css -c ./tailwind.config.js -o ./src/index.css",
     "watch:css": "tailwind build ./src/tailwind.css -c ./tailwind.config.js -o ./src/index.css -w",
-    "start": "npm run watch:css & react-scripts start",
-    "build": "npm run build:css && react-scripts build",
+    "start:tw": "npm run watch:css & react-scripts start",
+    "build:tw": "npm run build:css && react-scripts build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
