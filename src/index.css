@@ -7579,27 +7579,6 @@ video {
   z-index: auto;
 }
 
-.pxx-30{
-  padding-left: 30px;
-  padding-right: 30px;
-}
-
-.pbx-90{
-  padding-bottom: 90px;
- }
-
- .hx-156{
-   min-height: 156px;
- }
-
- .wx-36{
-   margin-bottom: 36px;
- }
- .actnBtn {
-  cursor: pointer;
-  width: 20px;
-  height: 20px;
-}
 @media (min-width: 640px) {
   .sm\:appearance-none {
     -webkit-appearance: none;
@@ -35406,4 +35385,44 @@ video {
   .xl\:z-auto {
     z-index: auto;
   }
+}
+
+.pxx-30{
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.pbx-90{
+  padding-bottom: 90px;
+ }
+
+ .hx-156{
+   min-height: 156px;
+ }
+
+ .wx-36{
+   margin-bottom: 36px;
+ }
+ .actnBtn {
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+}
+.pagination li {
+  padding: 5px;
+  background-color: #ccc;
+  width: 30px;
+  height: 30px;
+  line-height: 20px;
+  margin: 0 2px;
+  text-align: center;
+  color: #000;
+  border-radius:4px;
+}
+.pagination li.active{
+  background-color:#fbe776
+}
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
 }

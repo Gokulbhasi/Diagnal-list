@@ -2,8 +2,8 @@ import axios from "axios";
 import { getUrl, getErrorMessage } from "../networkconfig";
 
 export default async q => {
-  console.log(q);
-  const endpoint = `api/list?search=${q}`;
+  //console.log(q);
+  const endpoint = `api/search/?q=${q}`;
   const url = getUrl(endpoint);
 
   try {
@@ -17,7 +17,7 @@ export default async q => {
         "Access-Control-Allow-Headers": "Origin, Content-Type, X-Auth-Token"
       }
     });
-
+    //console.log(data);
     if (!data.status) return { error: "Request error" };
 
     return parseResponse(data);
@@ -27,6 +27,6 @@ export default async q => {
 };
 
 const parseResponse = response => {
-  console.log(response);
+  //console.log(response);
   return response;
 };

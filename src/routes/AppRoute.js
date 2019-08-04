@@ -17,7 +17,7 @@ const AppRoute = () => {
         <div className="pusher">
           <div className="ui minheight navbarmargin container">
             <Switch>
-              <Route path={RouteConfig.home.path} exact component={HomePage} />
+              <Route path={RouteConfig.home.path} component={HomePage} />
               <Route component={NotFound} />
             </Switch>
           </div>

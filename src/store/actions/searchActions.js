@@ -6,27 +6,39 @@ import {
 
 import searchListApi from "../../networking/apis/searchListApi";
 
-export const searchInRedux = (searchTerm, values) => {
+export const searchInRedux = searchTerm => {
+  //console.log(searchTerm);
   return async (dispatch, getState) => {
     const state = getState();
     if (state.home.loading) return;
-    console.log(searchTerm);
 
     dispatch(loadingDidStart());
-    console.log(searchTerm);
-    const response = await searchListApi(searchTerm);
-    console.log(searchTerm);
-    if (response.error) return dispatch(listDidFailToLoad());
+    //console.log(state.home.list.data);
+    const check = searchTerm === "" ? true : false;
+    if (check) {
+      return dispatch(listDidLoad(state.home.fulldata));
+    }
+    let searchData = [];
+    searchData = state.home.fulldata.data.filter(item =>
+      item.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
 
-    return dispatch(listDidLoad(response));
+    searchData =
+      searchData.length <= 0
+        ? await searchListApi(searchTerm)
+        : { status: true, data: searchData };
+    searchData.pageNo = 1;
+    if (searchData.error) return dispatch(listDidFailToLoad());
+
+    return dispatch(listDidLoad(searchData));
   };
 };
 
 const listDidFailToLoad = () => ({
   type: SEARCH_LIST_DID_FAIL_TO_LOAD
 });
-const listDidLoad = list => ({
+const listDidLoad = searchData => ({
   type: SEARCH_LIST_DID_LOAD,
-  payload: list
+  payload: searchData
 });
 const loadingDidStart = () => ({ type: SEARCH_LOADING_LIST });

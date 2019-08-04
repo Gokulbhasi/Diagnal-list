@@ -6,14 +6,14 @@ import {
 
 import homepageListApi from "../../networking/apis/homepageListApi";
 
-export const loadList = pageindex => {
+export const loadList = (pageindex, size) => {
   return async (dispatch, getState) => {
     const state = getState();
     if (state.home.loading) return;
 
     dispatch(loadingDidStart());
 
-    const response = await homepageListApi(pageindex);
+    const response = await homepageListApi(pageindex, size);
 
     if (response.error) return dispatch(listDidFailToLoad());
 

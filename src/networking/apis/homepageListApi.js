@@ -26,6 +26,6 @@ export default async (pageNo = 1, size = 10) => {
 };
 
 const parseResponse = response => {
-  console.log(response);
+  //console.log(response);
   return response;
 };
