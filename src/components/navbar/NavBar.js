@@ -24,7 +24,7 @@ class Navbar extends Component {
       <div className=" h-48 text-5xl">
         {!this.state.toggleSearch ? (
           <div className="w-full px-2 flex items-center flex-wrap justify-between py-20">
-            <div className="text-white self-start flex items-center w-4/5">
+            <div className="text-white self-start flex items-center max-w-1/5">
               <span className="actnBtn back">
                 <img
                   src="http://localhost/diagnal/public/dummyImages/back.png"
@@ -33,7 +33,7 @@ class Navbar extends Component {
               </span>
               <p className="pl-2 truncate">Romantic Comedy</p>
             </div>
-            <div className="self-end flex items-center w-1/5">
+            <div className="self-end flex items-center max-w-1/5">
               <span className="actnBtn back" onClick={this.toggleSearch}>
                 <img
                   src="http://localhost/diagnal/public/dummyImages/search.png"
@@ -47,7 +47,7 @@ class Navbar extends Component {
             className="w-full px-2 flex items-center flex-wrap justify-between py-10"
             onSubmit={this.searchRedux}
           >
-            <div className="text-white self-start flex items-center w-4/5">
+            <div className="text-white self-start flex items-center max-w-4/5">
               <input
                 type="text"
                 name="searchTerm"
@@ -57,7 +57,7 @@ class Navbar extends Component {
                 className="bg-transparent w-full px-2"
               />
             </div>
-            <div className="self-end flex items-center w-1/5 text-right">
+            <div className="self-end flex items-center max-w-1/5 text-right">
               <span
                 className="actnBtn search mr-0 ml-auto"
                 onClick={this.toggleSearch}
