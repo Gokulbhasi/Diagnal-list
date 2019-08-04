@@ -1,12 +1,15 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { searchInRedux } from "../../store/actions/searchActions";
+import { getUrl } from "../../networking/networkconfig";
 
 class Navbar extends Component {
   state = {
     toggleSearch: false,
     searchTerm: ""
   };
+
+  url = getUrl(`api/image/`);
   toggleSearch = e => {
     this.props.searchInRedux("");
     this.setState({ toggleSearch: !this.state.toggleSearch });
@@ -26,19 +29,13 @@ class Navbar extends Component {
           <div className="w-full px-2 flex items-center flex-wrap justify-between py-20">
             <div className="text-white self-start flex items-center max-w-1/5">
               <span className="actnBtn back">
-                <img
-                  src="http://localhost/diagnal/public/dummyImages/back.png"
-                  alt="next"
-                />
+                <img src={this.url + "back.png"} alt="next" />
               </span>
               <p className="pl-2 truncate">Romantic Comedy</p>
             </div>
             <div className="self-end flex items-center max-w-1/5">
               <span className="actnBtn back" onClick={this.toggleSearch}>
-                <img
-                  src="http://localhost/diagnal/public/dummyImages/search.png"
-                  alt="search"
-                />
+                <img src={this.url + "search.png"} alt="search" />
               </span>
             </div>
           </div>
@@ -62,10 +59,7 @@ class Navbar extends Component {
                 className="actnBtn search mr-0 ml-auto"
                 onClick={this.toggleSearch}
               >
-                <img
-                  src="http://localhost/diagnal/public/dummyImages/search.png"
-                  alt="search"
-                />
+                <img src={this.url + "search.png"} alt="search" />
               </span>
             </div>
           </form>
